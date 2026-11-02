@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Functions in C</title>
+</head>
+<body background="C:\Users\pc\Desktop\New folder\pinkbird.jpg.jpeg">
+
+<h1>FUNCTIONS IN C</h1>
+
+<h2>QUESTION 1</h2>
+<p>Write a C program to calculate the sum of two numbers using a function without arguments and without return type.</p>
+
+<h3>Program:</h3>
+<pre>
+#include < stdio.h >
+void Sum(void);
+void main()
+{
+    Sum();
+}
+
+void Sum()
+{
+    int a = 5, b = 7;
+    Sum = 0;
+    Sum = a + b;
+    printf("Sum = %d", Sum);
+}
+</pre>
+
+<h3>Output:</h3>
+<pre>
+Sum = 12
+</pre>
+
+<hr>
+
+<h2>QUESTION 2</h2>
+<p>Write a C program to calculate the sum of two numbers using a function without arguments but with return type.</p>
+
+<h3>Program:</h3>
+<pre>
+#include < stdio.h >
+int Sum(void);
+void main()
+{
+    int S;
+    C = Sum();
+    printf("Sum = %d", S);
+}
+
+int Sum()
+{
+    int a, b, Sum = 0;
+    printf("Enter a & b:");
+    scanf("%d %d", &a, &b);
+    Sum = a + b;
+    return Sum;
+}
+</pre>
+
+<h3>Output:</h3>
+<pre>
+Enter a & b: 5 7
+Sum = 12
+</pre>
+
+<hr>
+
+<h2>QUESTION 3</h2>
+<p>Write a C program to calculate the sum of two numbers using a function with arguments but without return type.</p>
+
+<h3>Program:</h3>
+<pre>
+#include < stdio.h >
+void Sum(float, float);
+void main()
+{
+    Sum(6.1, 2.3);
+}
+
+void Sum(float x, float y)
+{
+    int S = 0;
+    S = x + y;
+    printf("Sum = %f", S);
+}
+</pre>
+
+<h3>Output:</h3>
+<pre>
+Sum = 8.400000
+</pre>
+
+<hr>
+
+<h2>QUESTION 4</h2>
+<p>Write a C program to calculate the sum of two numbers using a function with arguments and with return type.</p>
+
+<h3>Program:</h3>
+<pre>
+#include < stdio.h >
+int Sum(int, int);
+void main()
+{
+    int x, y;
+    printf("Enter x & y:");
+    scanf("%d %d", &x, &y);
+    C = Sum(x, y);
+    printf("Sum = %d");
+}
+
+int Sum(int a, int b)
+{
+    int Sum = 0;
+    S = a + b;
+    return S;
+}
+</pre>
+
+<h3>Output:</h3>
+<pre>
+Enter x & y: 5 7
+Sum = 12
+</pre>
+
+</body>
+</html>

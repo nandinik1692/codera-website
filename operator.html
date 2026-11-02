@@ -1,0 +1,468 @@
+<html>
+<head>
+<title>operators</title>
+</head>
+
+<body background="C:\Users\pc\Desktop\New folder\SUNDAR.jpeg.jpeg">
+<marquee><h2><U><I> <B>DON'T GIVE UP AND KEEP SMILING ..................</H2></u></i></marquee>
+
+<h1>C Programs and Outputs</h1>
+
+<div class="program-box">
+    <h2><b>Question 1</h2>
+    <p><b>write a  program to show that example of post-increment?.</p>
+
+    <h3>Program:</h3>
+    <pre>
+
+     #include < stdio.h >
+ 
+      int main() {
+ 
+
+   int a=1;
+ 
+   int b=a++;
+ {
+printf("the increment of a =%d \n",a);
+ 
+  printf("the increment of b =%d",b);
+ }
+  }
+               
+</pre>
+<h3>Output:</h3>
+<pre>          the increment of a =2 
+ 
+          the increment of b =1
+</pre>
+</div>
+<hr style="height:5px; background-color:black; border:none;">
+
+
+
+
+
+
+<div class="program-box">
+    <h2>Question 2</h2>
+    <p>write a  program to show that example of pre-increment?.</p>
+
+    <h3>Program:</h3>
+    <pre>
+
+     #include < stdio.h >
+ 
+      int main() {
+ 
+
+   int a=1;
+ 
+   int b=a++;
+ {
+printf("the increment of a =%d \n",a);
+ 
+  printf("the increment of b =%d",b);
+ }
+  }
+               
+</pre>
+<h3>Output:</h3>
+<pre>          the increment of a =2 
+ 
+          the increment of b =2
+</pre>
+</div>
+<hr style="height:5px; background-color:black; border:none;">
+
+
+
+
+
+
+
+<div class="program-box">
+    <h2>Question 3</h2>
+    <p>write a  program to enter 2 numbers from the user add the number and show the answer,again take the 2 numbers from the user subtract
+the number and display the answer,again take the 2 numbers from the user multiplythe number and display the answer,again take the 2 numbers from the user divide,again take the 2 numbers from the user remainder?</p>
+the number and display the answer</p>
+the number and display the answer</p>
+
+    <h3>Program:</h3>
+    <pre>#include < stdio.h >
+
+
+int main()
+
+{
+    int a, b, c;
+
+  
+
+  printf("Enter two numbers for addition: ");
+
+
+ scanf("%d %d", &a, &b);
+    c = a + b;
+ 
+
+printf("Addition = %d\n", c);
+
+ 
+printf("Enter two numbers for subtraction: ");
+
+ scanf("%d %d", &a, &b);
+    
+c = a - b;
+   
+
+ printf("Subtraction = %d\n", c);
+
+  
+
+
+  printf("Enter two numbers for multiplication: ");
+ 
+
+
+   scanf("%d %d", &a, &b);
+  
+
+  c = a * b;
+  
+  printf("Multiplication = %d\n", c);
+
+   
+ printf("Enter two numbers for division: ");
+
+    scanf("%d %d", &a, &b);
+   
+ if (b != 0)
+    {
+      
+  c = a / b;
+       
+ printf("Division = %d\n", c);
+  
+  }
+    else
+ 
+   {
+        printf("Division is not possible.\n");
+  
+  }
+
+  
+  printf("Enter two numbers for remainder: ");
+    
+scanf("%d %d", &a, &b);
+   
+ if (b != 0)
+    {
+   
+     c = a % b;
+       
+ printf("Remainder = %d\n", c);
+    }
+    
+else
+    {
+  
+      printf("Remainder is not possible.\n");
+    }
+
+  
+  return 0;
+}
+
+
+    }
+               
+</pre>
+<h3>Output:</h3>
+<pre>       Enter two numbers for addition: 1
+1
+
+Addition = 2
+
+Enter two numbers for subtraction: 1 1
+
+Subtraction = 0
+
+Enter two numbers for multiplication: 1 1
+
+Multiplication = 1
+
+Enter two numbers for division: 0 1
+
+Division = 0
+
+Enter two numbers for remainder: 1 0
+
+Remainder is not possible.
+
+</pre>
+</div>
+<hr style="height:5px; background-color:black; border:none;">
+
+
+
+
+
+
+
+
+<div class="program-box">
+    <h2>Question 4</h2>
+    <p>write a  program to enter a number from the user ,the length of the number is depend on the user ,programmer should print the last digit of number</p>
+
+    <h3>Program:</h3>
+    <pre>
+
+    #include < stdio.h >
+int main(){
+ 
+   
+    int num,last;
+
+printf("enter the digit:");
+
+scanf("%d",&num);
+
+last=num % 10;
+
+printf("the last digit is:%d",last);
+
+}             
+</pre>
+<h3>Output:</h3>
+<pre>       
+       enter the digit:11
+
+       the last digit is:1
+</pre>
+</div>
+<hr style="height:5px; background-color:black; border:none;">
+
+
+<div class="program-box">
+    <h2>Question 5</h2>
+    <p>enter the decimal number from the user(float)and print the right side of the decimal point?</p>
+<pre>
+
+
+#include < stdio.h >
+
+
+int main(){
+float num,b;
+
+
+printf("enter the decimal number:");
+
+
+scanf("%f",&num);
+
+b=num-(int)num;
+
+printf("the last digit is:%f",b);
+}
+
+
+    <h3>Program:</h3>
+    <pre>
+
+   
+</pre>
+<h3>Output:</h3>
+<pre>       
+enter the decimal number:11.11
+
+the last digit is:0.110000
+</pre>
+</div>
+<hr style="height:5px; background-color:black; border:none;">
+
+
+
+
+
+
+
+<div class="program-box">
+    <h2>Question 6</h2>
+    <p>enter the number from the user and find the cube of the number</p>
+
+<pre>
+
+
+#include < stdio.h >
+
+
+int main(){
+float num,b;
+
+
+printf("enter the decimal number:");
+
+
+scanf("%f",&num);
+
+b=num-(int)num;
+
+printf("the last digit is:%f",b);
+}
+
+
+ 
+
+
+
+
+   
+</pre>
+<h3>Output:</h3>
+<pre>       
+enter the number:2
+the cube is:8
+</pre>
+</div>
+<hr style="height:5px; background-color:black; border:none;">
+
+
+
+
+
+
+
+
+<div class="program-box">
+    <h2>Question 7</h2>
+    <p>Question
+Write a C program to input a lowercase character from the user and print it in uppercase Program</p>
+#include < stdio.h >
+
+int main()
+{
+    float a, b, c, average;
+
+    printf("Enter marks of three students: ");
+    scanf("%f %f %f", &a, &b, &c);
+
+    average = (a + b + c) / 3;
+
+    printf("Average marks = %.2f", average);
+
+    return 0;
+}
+
+
+
+
+
+<pre>
+
+
+#include < stdio.h >
+#include <math.h>
+
+int main()
+{
+    float num;
+    
+    printf("Enter a float number: ");
+    scanf("%f", &num);
+    
+    printf("Rounded number = %.0f", round(num));
+    
+    return 0;
+}
+
+
+
+
+   
+</pre>
+<h3>Output:</h3>
+<pre>       
+Enter a float number: 25.67
+Rounded number = 26
+</pre>
+</div>
+<hr style="height:5px; background-color:black; border:none;">
+
+
+
+
+<div class="program-box">
+    <h2>Question 8</h2>
+    <p>enter the number from the user and find the cube of the number</p>
+
+<pre>
+
+
+#include < stdio.h >
+#include < math.h >
+
+int main()
+{
+    float num;
+    
+    printf("Enter a float number: ");
+    scanf("%f", &num);
+    
+    printf("Rounded number = %.0f", round(num));
+    
+    return 0;
+}
+
+
+
+
+   
+</pre>
+<h3>Output:</h3>
+<pre>       
+Enter a float number: 25.67
+Rounded number = 26
+</pre>
+</div>
+<hr style="height:5px; background-color:black; border:none;"></PRE>
+
+<marquee><h2><U><I> <B>THANK YOU GOR YOUR TRUST TO BEGIN YOUR JOURNEY FROM HERE ..................</H2></u></i></marquee>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

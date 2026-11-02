@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Functions in C</title>
+</head>
+<body background="C:\Users\pc\Desktop\New folder\pinkbird.jpg.jpeg">
+
+<h1>STRING FUNCTIONS IN C</h1>
+
+<h2>QUESTION 1</h2>
+<p>Write a C program to find the length of a string using strlen() function.</p>
+
+<h3>Program:</h3>
+<pre>
+#include < stdio.h >
+#include < string.h >
+
+main()
+{
+    char Str1[20] = "Micro Solution";
+
+    printf("length of Str1 : %d", strlen(Str1));
+}
+</pre>
+
+<h3>Output:</h3>
+<pre>
+length of Str1 : 14
+</pre>
+
+<hr>
+
+<h2>QUESTION 2</h2>
+<p>Write a C program to compare two strings using strcmp() function.</p>
+
+<h3>Program:</h3>
+<pre>
+#include < stdio.h >
+#include < string.h >
+
+
+main()
+{
+    char s1[20] = "Micro Solution";
+    char s2[20] = "Abishek";
+
+    if(strcmp(s1,s2)==0)
+    {
+        printf("String 1 and String 2 are equal");
+    }
+    else
+    {
+        printf("String 1 and 2 are different");
+    }
+}
+</pre>
+
+<h3>Output:</h3>
+<pre>
+String 1 and 2 are different
+</pre>
+
+<hr>
+
+<h2>QUESTION 3</h2>
+<p>Write a C program to join two strings using strcat() function.</p>
+
+<h3>Program:</h3>
+<pre>
+#include < stdio.h >
+#include < string.h >
+
+
+main()
+{
+    char s1[20] = "Welcome to";
+    char s2[20] = " Micro Solution";
+
+    strcat(s1,s2);
+
+    printf("Output string after concatenation: %s",s1);
+}
+</pre>
+
+<h3>Output:</h3>
+<pre>
+Output string after concatenation: Welcome to Micro Solution
+</pre>
+
+<hr>
+
+<h2>QUESTION 4</h2>
+<p>Write a C program to copy one string into another using strcpy() function.</p>
+
+<h3>Program:</h3>
+<pre>
+#include < stdio.h >
+#include < string.h >
+
+main()
+{
+    char s1[30] = "Learn C Programming";
+    char s2[30];
+
+    strcpy(s2,s1);
+
+    printf("String s2 is : %s",s2);
+}
+</pre>
+
+<h3>Output:</h3>
+<pre>
+String s2 is : Learn C Programming
+</pre>
+
+<hr>
+
+</body>
+</html>

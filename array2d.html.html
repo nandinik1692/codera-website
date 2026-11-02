@@ -1,0 +1,65 @@
+<html>
+<head>
+
+<title>2D ARRAY</title>
+<body background="C:\Users\pc\Desktop\New folder\pinkbird.jpg.jpeg">
+<marquee><h2><U><I> <B>DON'T GIVE UP AND KEEP SMILING ..................</H2></u></i></marquee>
+<marquee><h2><U><I> <B>2D ARRAY</H2></u></i></marquee>
+</head>
+<body>
+<pre> 
+
+
+<H1>QUESTION:</H1>
+<B>Write a C program to input and display a 3 × 3 matrix using a two-dimensional array.
+PROGRAM (Your notebook code, written neatly)
+#include < stdio.h >
+
+int main()
+{
+    int number[3][3];
+    int i, j;
+
+    for(i = 0; i < 3; i++)
+    {
+        for(j = 0; j < 3; j++)
+        {
+            printf("Enter number: ");
+            scanf("%d", &number[i][j]);
+        }
+    }
+
+    printf("The matrix is:\n");
+
+    for(i = 0; i < 3; i++)
+    {
+        for(j = 0; j < 3; j++)
+        {
+            printf("%d\t", number[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+OUTPUT
+Enter number: 23
+Enter number: 30
+Enter number: 31
+Enter number: 25
+Enter number: 12
+Enter number: 19
+Enter number: 5
+Enter number: 52
+Enter number: 53
+
+The matrix is:
+23      30      31
+25      12      19
+5       52      53
+
+
+</pre>
+</body>
+</html>

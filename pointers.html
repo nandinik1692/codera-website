@@ -1,0 +1,38 @@
+<html>
+<head>
+
+<title>pointers</title>
+<body background="C:\Users\pc\Desktop\New folder\pinkbird.jpg.jpeg">
+<marquee><h2><U><I> <B>DON'T GIVE UP AND KEEP SMILING ..................</H2></u></i></marquee>
+</head>
+<body>
+<pre> 
+
+
+
+<h1> Pointers in C Language</h1>
+<b>Question 1: Write a C program to display the value and address of a variable using a pointer.
+Program:
+ #include < stdio.h >
+
+int main()
+{
+    int a = 50;
+    int *p;
+
+    p = &a;
+
+    printf("Value is %d", a);
+    printf("\nAddress is %p", (void *)&a);
+    printf("\nValue using pointer is %d", *p);
+
+    return 0;
+}
+
+output:
+Value is 50
+Address is 0x7ffe1234
+Value using pointer is 50
+</pre>
+</body>
+</html>
