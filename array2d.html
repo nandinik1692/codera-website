@@ -1,19 +1,435 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
 <html>
 <head>
 
 <title>2D ARRAY</title>
-<body background="pinkbird.jpg.jpeg">
-<marquee><h2><U><I> <B>DON'T GIVE UP AND KEEP SMILING ..................</H2></u></i></marquee>
-<marquee><h2><U><I> <B>2D ARRAY</H2></u></i></marquee>
+
+<style>
+body {
+    font-family: Arial;
+    background-image: url("pinkbird.jpg.jpeg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 25px;
+    font-size: 20px;
+}
+
+h1 {
+    color: darkred;
+    font-size: 36px;
+}
+
+h2 {
+    color: darkblue;
+    font-size: 28px;
+}
+
+.question {
+    font-weight: bold;
+    color: darkred;
+    font-size: 22px;
+}
+
+pre {
+    background-color: rgba(255,255,255,0.90);
+    border: 2px solid pink;
+    padding: 15px;
+    font-size: 18px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+.output {
+    background-color: rgba(255,255,255,0.90);
+    border: 2px solid orange;
+    padding: 15px;
+    font-size: 18px;
+    white-space: pre-wrap;
+}
+
+hr {
+    border: 2px solid pink;
+}
+</style>
+
 </head>
+
 <body>
-<pre> 
 
+<marquee>
+<h2><u><i><b>DON'T GIVE UP AND KEEP SMILING ..................</b></i></u></h2>
+</marquee>
 
-<H1>QUESTION:</H1>
-<B>Write a C program to input and display a 3 × 3 matrix using a two-dimensional array.
-PROGRAM (Your notebook code, written neatly)
-#include < stdio.h >
+<marquee>
+<h2><u><i><b>2D ARRAY</b></i></u></h2>
+</marquee>
+
+<hr>
+
+<h2>Question 1</h2>
+
+<p class="question">
+Enter the four numbers from user and print it into matrix.
+</p>
+
+<h3>Solution:</h3>
+
+<pre>
+#include  < stdio.h >;
+
+int main()
+{
+    int num1, num2, num3, num4;
+
+    printf("Enter 4 numbers: ");
+    scanf("%d", &num1);
+    scanf("%d", &num2);
+    scanf("%d", &num3);
+    scanf("%d", &num4);
+
+    printf("\nMatrix:\n");
+    printf("%d  %d\n", num1, num2);
+    printf("%d  %d\n", num3, num4);
+
+    return 0;
+}
+</pre>
+
+<h3>Output:</h3>
+
+<div class="output">
+Enter 4 numbers: 10 20 30 40
+
+Matrix:
+10  20
+30  40
+</div>
+
+<hr>
+
+<h2>Question 2</h2>
+
+<p class="question">
+Enter the matrix from user and transpose them.
+</p>
+
+<h3>Solution:</h3>
+
+<pre>
+#include < stdio.h >;
+
+int main()
+{
+    int matrix[2][2], i, j;
+
+    printf("Enter 4 numbers for matrix:\n");
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    printf("\nOriginal Matrix:\n");
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\nTransposed Matrix:\n");
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("%d ", matrix[j][i]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+</pre>
+
+<h3>Output:</h3>
+
+<div class="output">
+Enter 4 numbers for matrix:
+1 2
+3 4
+
+Original Matrix:
+1 2
+3 4
+
+Transposed Matrix:
+1 3
+2 4
+</div>
+
+<hr>
+
+<h2>Question 3</h2>
+
+<p class="question">
+Enter 2 matrix from user and add them.
+</p>
+
+<h3>Solution:</h3>
+
+<pre>
+#include < stdio.h >;
+
+int main()
+{
+    int a[2][2], b[2][2], sum[2][2];
+    int i, j;
+
+    printf("Enter 4 numbers for the first matrix:\n");
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    printf("Enter 4 numbers for the second matrix:\n");
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            sum[i][j] = a[i][j] + b[i][j];
+        }
+    }
+
+    printf("\nThe Sum is:\n");
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("%d ", sum[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+</pre>
+
+<h3>Output:</h3>
+
+<div class="output">
+Enter 4 numbers for the first matrix:
+1 2
+3 4
+
+Enter 4 numbers for the second matrix:
+5 6
+7 8
+
+The Sum is:
+6 8
+10 12
+</div>
+
+<hr>
+
+<h2>Question 4</h2>
+
+<p class="question">
+Enter 2 matrix from user and subtract them.
+</p>
+
+<h3>Solution:</h3>
+
+<pre>
+#include < stdio.h >;
+
+int main()
+{
+    int A[2][2], B[2][2], C[2][2];
+    int i, j;
+
+    printf("Enter 4 numbers for Matrix A:\n");
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    printf("Enter 4 numbers for Matrix B:\n");
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            scanf("%d", &B[i][j]);
+        }
+    }
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            C[i][j] = A[i][j] - B[i][j];
+        }
+    }
+
+    printf("\nSubtraction:\n");
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("%d ", C[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+</pre>
+
+<h3>Output:</h3>
+
+<div class="output">
+Enter 4 numbers for Matrix A:
+5 8
+7 3
+
+Enter 4 numbers for Matrix B:
+1 2
+4 3
+
+Subtraction:
+4 6
+3 0
+</div>
+
+<hr>
+
+<h2>Question 5</h2>
+
+<p class="question">
+Enter 2 matrix from user and multiply them.
+</p>
+
+<h3>Solution:</h3>
+
+<pre>
+#include < stdio.h >;
+
+int main()
+{
+    int A[2][2], B[2][2], C[2][2];
+    int i, j, k;
+
+    printf("Enter 4 elements for First Matrix (A):\n");
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    printf("Enter 4 elements for Second Matrix (B):\n");
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            scanf("%d", &B[i][j]);
+        }
+    }
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            C[i][j] = 0;
+
+            for(k = 0; k < 2; k++)
+            {
+                C[i][j] = C[i][j] + A[i][k] * B[k][j];
+            }
+        }
+    }
+
+    printf("\nResult Matrix (A * B):\n");
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("%d ", C[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+</pre>
+
+<h3>Output:</h3>
+
+<div class="output">
+Enter 4 elements for First Matrix (A):
+1 2
+3 4
+
+Enter 4 elements for Second Matrix (B):
+5 6
+7 8
+
+Result Matrix (A * B):
+19 22
+43 50
+</div>
+
+<hr>
+
+<h2>Question 6</h2>
+
+<p class="question">
+Write a C program to input and display a 3 x 3 matrix using a two-dimensional array.
+</p>
+
+<h3>Solution:</h3>
+
+<pre>
+#include < stdio.h >;
 
 int main()
 {
@@ -42,8 +458,11 @@ int main()
 
     return 0;
 }
+</pre>
 
-OUTPUT
+<h3>Output:</h3>
+
+<div class="output">
 Enter number: 23
 Enter number: 30
 Enter number: 31
@@ -58,8 +477,9 @@ The matrix is:
 23      30      31
 25      12      19
 5       52      53
+</div>
 
+<hr>
 
-</pre>
 </body>
 </html>
