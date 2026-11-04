@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>File Handling Practice Questions</title>
+
+<style>
+body {
+    font-family: Arial;
+    background-color: #fff0f5;
+    padding: 25px;
+    font-size: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: darkred;
+    font-size: 36px;
+}
+
+h2 {
+    color: darkblue;
+    font-size: 28px;
+}
+
+.question {
+    font-weight: bold;
+    color: darkred;
+    font-size: 22px;
+}
+
+pre {
+    background-color: white;
+    border: 2px solid pink;
+    padding: 15px;
+    font-size: 17px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+.output {
+    background-color: #fffacd;
+    border: 2px solid orange;
+    padding: 15px;
+    font-size: 18px;
+    white-space: pre-wrap;
+}
+
+hr {
+    border: 2px solid pink;
+}
+</style>
+</head>
+
+<body>
+
+<h1>FILE HANDLING</h1>
+<h2 style="text-align:center;">Practice Questions</h2>
+
+<hr>
+
+<h2>Question 1</h2>
+<p class="question">Enter a file name from the user and the data from the user and put it in file.</p>
+
+<h3>Solution:</h3>
+
+<pre>
+#include < stdio.h >;
+#include < conio.h >;
+
+void main()
+{
+    FILE *fp;
+    char fname[30], data[100];
+
+    clrscr();
+
+    printf("Enter file name: ");
+    scanf("%s", fname);
+
+    fp = fopen(fname, "w");
+
+    printf("Enter data: ");
+    scanf(" %[^\n]", data);
+
+    fprintf(fp, "%s", data);
+
+    fclose(fp);
+
+    printf("Data saved successfully.");
+}
+</pre>
+
+<h3>Output:</h3>
+<div class="output">Enter file name: first.txt
+Enter data: Hello World
+Data saved successfully.</div>
+
+<hr>
+
+<h2>Question 2</h2>
+<p class="question">Enter the file name from the user and the data from the user and put it in file. But data should be in capital letters.</p>
+
+<h3>Solution:</h3>
+
+<pre>
+#include < stdio.h >;
+#include < conio.h >;
+
+void main()
+{
+    FILE *fp;
+    char fname[20], data[50];
+    int i;
+
+    clrscr();
+
+    printf("Enter file name: ");
+    scanf("%s", fname);
+
+    fp = fopen(fname, "w");
+
+    printf("Enter data: ");
+    scanf("%s", data);
+
+    for(i = 0; data[i] != '\0'; i++)
+    {
+        if(data[i] >= 'a' && data[i] <= 'z')
+        {
+            data[i] = data[i] - 32;
+        }
+    }
+
+    fprintf(fp, "%s", data);
+
+    fclose(fp);
+
+    printf("Data saved successfully.");
+}
+</pre>
+
+<h3>Output:</h3>
+<div class="output">Enter file name: first.txt
+Enter data: hello
+
+Data saved successfully.</div>
+
+<hr>
+
+<h2>Question 3</h2>
+<p class="question">Enter the file name from the user and the data from the user till the user wants to enter.</p>
+
+<h3>Solution:</h3>
+
+<pre>
+
+#include < stdio.h >;
+#include < conio.h >;
+
+void main()
+{
+    FILE *fp;
+    char fname[20], data[50];
+    int ch;
+
+    clrscr();
+
+    printf("Enter file name: ");
+    scanf("%s", fname);
+
+    fp = fopen(fname, "w");
+
+    ch = 1;
+
+    while(ch == 1)
+    {
+        printf("Enter data: ");
+        scanf(" %[^\n]", data);
+
+        fprintf(fp, "%s\n", data);
+
+        printf("Enter 1 to continue or 0 to stop: ");
+        scanf("%d", &ch);
+    }
+
+    fclose(fp);
+
+    printf("Data saved successfully.");
+}
+</pre>
+
+<h3>Output:</h3>
+<div class="output">Enter file name: first.txt
+Enter data: Hello World
+Enter 1 to continue or 0 to stop: 1
+Enter data: Welcome to C
+Enter 1 to continue or 0 to stop: 0
+
+Data saved successfully.</div>
+
+<hr>
+
+<h2>Question 4</h2>
+<p class="question">Enter two files from the user and concatenate into 3rd file.</p>
+
+<h3>Solution:</h3>
+
+<pre>
+#include < stdio.h >;
+#include < conio.h >;
+
+void main()
+{
+    FILE *fp, *fp1, *fp2;
+    char a[20], b[20], cfile[20], data[50];
+    int c;
+
+    clrscr();
+
+    printf("Enter first file name: ");
+    scanf("%s", a);
+
+    fp = fopen(a, "w");
+    printf("Enter first data: ");
+    scanf(" %[^\n]", data);
+    fprintf(fp, "%s\n", data);
+    fclose(fp);
+
+    printf("Enter second file name: ");
+    scanf("%s", b);
+
+    fp1 = fopen(b, "w");
+    printf("Enter second data: ");
+    scanf(" %[^\n]", data);
+    fprintf(fp1, "%s\n", data);
+    fclose(fp1);
+
+    printf("Enter third file name: ");
+    scanf("%s", cfile);
+
+    fp = fopen(a, "r");
+    fp1 = fopen(b, "r");
+    fp2 = fopen(cfile, "w");
+
+    c = fgetc(fp);
+
+    while(c != -1)
+    {
+        fputc(c, fp2);
+        c = fgetc(fp);
+    }
+
+    c = fgetc(fp1);
+
+    while(c != -1)
+    {
+        fputc(c, fp2);
+        c = fgetc(fp1);
+    }
+
+    fclose(fp);
+    fclose(fp1);
+    fclose(fp2);
+
+    printf("Files joined successfully.");
+}
+</pre>
+
+<h3>Output:</h3>
+<div class="output">Enter first file name: a.txt
+Enter first data: Hello World
+
+Enter second file name: b.txt
+Enter second data: Welcome to C
+
+Enter third file name: c.txt
+
+Files joined successfully.</div>
+
+<hr>
+
+<h2>Question 5</h2>
+<p class="question">Enter the file name from the user and the data from the user and rename that file. But rename should be by user.</p>
+
+<h3>Solution:</h3>
+
+<pre>
+#include < stdio.h >;
+#include < conio.h >;
+
+void main()
+{
+    FILE *fp, *fp1;
+    char fname[20], newname[20], data[50];
+    int ch, c;
+
+    clrscr();
+
+    printf("Enter file name: ");
+    scanf("%s", fname);
+
+    fp = fopen(fname, "w");
+
+    ch = 1;
+
+    while(ch == 1)
+    {
+        printf("Enter data: ");
+        scanf(" %[^\n]", data);
+
+        fprintf(fp, "%s\n", data);
+
+        printf("Enter 1 to continue or 0 to stop: ");
+        scanf("%d", &ch);
+    }
+
+    fclose(fp);
+
+    printf("Enter new file name: ");
+    scanf("%s", newname);
+
+    fp = fopen(fname, "r");
+    fp1 = fopen(newname, "w");
+
+    c = fgetc(fp);
+
+    while(c != -1)
+    {
+        fputc(c, fp1);
+        c = fgetc(fp);
+    }
+
+    fclose(fp);
+    fclose(fp1);
+
+    printf("File copied successfully.");
+}
+</pre>
+
+<h3>Output:</h3>
+<div class="output">Enter file name: first.txt
+Enter data: Hello World
+Enter 1 to continue or 0 to stop: 1
+Enter data: Welcome to C
+Enter 1 to continue or 0 to stop: 0
+
+Enter new file name: second.txt
+
+File copied successfully.</div>
+
+<hr>
+
+<h2>Question 6</h2>
+<p class="question">Create a file and count no. of characters in a file.</p>
+
+<h3>Solution:</h3>
+
+<pre>
+#include < stdio.h >;
+#include < conio.h >;
+
+void main()
+{
+    FILE *fp;
+    char name[20], data[50];
+    int c, count = 0;
+
+    clrscr();
+
+    printf("Enter file name: ");
+    scanf("%s", name);
+
+    fp = fopen(name, "w");
+
+    printf("Enter data: ");
+    scanf(" %[^\n]", data);
+
+    fprintf(fp, "%s", data);
+    fclose(fp);
+
+    fp = fopen(name, "r");
+
+    c = fgetc(fp);
+
+    while(c != -1)
+    {
+        count++;
+        c = fgetc(fp);
+    }
+
+    fclose(fp);
+
+    printf("Total characters = %d", count);
+}
+</pre>
+
+<h3>Output:</h3>
+<div class="output">Enter file name: abc.txt
+Enter data: Hello World
+Total characters = 11</div>
+
+<hr>
+
+<h2>Question 7</h2>
+<p class="question">Create a file and count no. of words in a file.</p>
+
+<h3>Solution:</h3>
+
+<pre>
+#include < stdio.h >;
+#include < conio.h >;
+
+void main()
+{
+    FILE *fp;
+    char name[20], data[50];
+    int c, count = 1;
+
+    clrscr();
+
+    printf("Enter file name: ");
+    scanf("%s", name);
+
+    fp = fopen(name, "w");
+
+    printf("Enter data: ");
+    scanf(" %[^\n]", data);
+
+    fprintf(fp, "%s", data);
+    fclose(fp);
+
+    fp = fopen(name, "r");
+
+    c = fgetc(fp);
+
+    while(c != -1)
+    {
+        if(c == ' ')
+            count++;
+
+        c = fgetc(fp);
+    }
+
+    fclose(fp);
+
+    printf("Total words = %d", count);
+}
+</pre>
+
+<h3>Output:</h3>
+<div class="output">Enter file name: abc.txt
+Enter data: Hello World bye
+
+Total words = 3</div>
+
+<hr>
+
+</body>
+</html>
