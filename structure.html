@@ -1,15 +1,73 @@
+<!DOCTYPE html>
 <html>
 <head>
+<title>Structures Practice Questions</title>
 
-<title>structure</title>
-<body background="pinkbird.jpg.jpeg">
-<marquee><h2><U><I> <B>DON'T GIVE UP AND KEEP SMILING ..................</H2></u></i></marquee>
+<style>
+body {
+    font-family: Arial;
+    background-color: #fff0f5;
+    padding: 25px;
+    font-size: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: darkred;
+    font-size: 36px;
+}
+
+h2 {
+    color: darkblue;
+    font-size: 28px;
+}
+
+.question {
+    font-weight: bold;
+    color: darkred;
+    font-size: 22px;
+}
+
+pre {
+    background-color: white;
+    border: 2px solid pink;
+    padding: 15px;
+    font-size: 18px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+.output {
+    background-color: #fffacd;
+    border: 2px solid orange;
+    padding: 15px;
+    font-size: 18px;
+    white-space: pre-wrap;
+}
+
+hr {
+    border: 2px solid pink;
+}
+</style>
 </head>
-<body>
-<pre> 
 
-<h1>QUESTION 1:</h1>
-#include < stdio.h >
+<body>
+
+<h1>STRUCTURES</h1>
+<h2 style="text-align:center;">Practice Questions</h2>
+
+<hr>
+
+<h2>Question 1</h2>
+
+<p class="question">
+Create a structure of student containing roll number, name, city and marks. Enter details from user and display them.
+</p>
+
+<h3>Solution:</h3>
+
+<pre>
+#include < stdio.h >;
 
 struct student
 {
@@ -42,8 +100,11 @@ int main()
 
     return 0;
 }
+</pre>
 
-<h1>OUTPUT:</h1>
+<h3>Output:</h3>
+
+<div class="output">
 Enter Roll Number: 101
 Enter the Name: Nandini
 Enter the City: Chandigarh
@@ -53,14 +114,205 @@ Roll Number is: 101
 Name is: Nandini
 City is: Chandigarh
 Total Marks is: 95
+</div>
 
+<hr>
 
+<h2>Question 2</h2>
 
-<h1> <a href="https://nandinik1692.github.io/codera-website/form.html"><b><u>PLEASE CLICK ON ME TO PROCEED</u></b> </a> </h1>
+<p class="question">
+Create structure of employee which there is emp.ID, name, designation of 50 employees from user, print details in tabular form?
+</p>
 
+<h3>Solution:</h3>
 
+<pre>
+#include < stdio.h >;
+#include < conio.h >;
 
+struct employee
+{
+    int id;
+    char name[20];
+    char designation[20];
+};
 
+void main()
+{
+    struct employee emp[50];
+    int i;
+
+    clrscr();
+
+    for(i = 0; i < 50; i++)
+    {
+        printf("\nEnter ID: ");
+        scanf("%d", &emp[i].id);
+
+        printf("Enter Name: ");
+        scanf("%s", emp[i].name);
+
+        printf("Enter Designation: ");
+        scanf("%s", emp[i].designation);
+    }
+
+    printf("\nID\tName\tDesignation");
+
+    for(i = 0; i < 50; i++)
+    {
+        printf("\n%d\t%s\t%s",
+        emp[i].id, emp[i].name, emp[i].designation);
+    }
+}
 </pre>
+
+<h3>Output:</h3>
+
+<div class="output">
+Enter ID: 101
+Enter Name: Rahul
+Enter Designation: Manager
+
+Enter ID: 102
+Enter Name: Aman
+Enter Designation: Clerk
+
+ID      Name    Designation
+101     Rahul   Manager
+102     Aman    Clerk
+</div>
+
+<hr>
+
+<h2>Question 3</h2>
+
+<p class="question">
+Create structure of employee which there is emp.ID, name, designation of 50 employees from user and print only name of the employee?
+</p>
+
+<h3>Solution:</h3>
+
+<pre>
+#include < stdio.h >;
+#include < conio.h >;
+
+struct employee
+{
+    int id;
+    char name[20];
+    char designation[20];
+};
+
+void main()
+{
+    struct employee emp[50];
+    int i;
+
+    clrscr();
+
+    for(i = 0; i < 50; i++)
+    {
+        printf("\nEnter ID: ");
+        scanf("%d", &emp[i].id);
+
+        printf("Enter Name: ");
+        scanf("%s", emp[i].name);
+
+        printf("Enter Designation: ");
+        scanf("%s", emp[i].designation);
+    }
+
+    printf("\nEmployee Names:\n");
+
+    for(i = 0; i < 50; i++)
+    {
+        printf("%s\n", emp[i].name);
+    }
+}
+</pre>
+
+<h3>Output:</h3>
+
+<div class="output">
+Enter ID: 101
+Enter Name: Rahul
+Enter Designation: Manager
+
+Enter ID: 102
+Enter Name: Aman
+Enter Designation: Clerk
+
+Employee Names:
+Rahul
+Aman
+</div>
+
+<hr>
+
+<h2>Question 4</h2>
+
+<p class="question">
+Create structure of employee which there is emp.ID, name, designation of 50 employees from user and print name with emp.ID in tabular form?
+</p>
+
+<h3>Solution:</h3>
+
+<pre>
+#include < stdio.h >;
+#include < conio.h >;
+
+struct employee
+{
+    int id;
+    char name[20];
+    char designation[20];
+};
+
+void main()
+{
+    struct employee emp[50];
+    int i;
+
+    clrscr();
+
+    for(i = 0; i < 50; i++)
+    {
+        printf("\nEnter ID: ");
+        scanf("%d", &emp[i].id);
+
+        printf("Enter Name: ");
+        scanf("%s", emp[i].name);
+
+        printf("Enter Designation: ");
+        scanf("%s", emp[i].designation);
+    }
+
+    printf("\nID\tName");
+
+    for(i = 0; i < 50; i++)
+    {
+        printf("\n%d\t%s", emp[i].id, emp[i].name);
+    }
+}
+</pre>
+
+<h3>Output:</h3>
+
+<div class="output">
+Enter ID: 101
+Enter Name: Rahul
+Enter Designation: Manager
+
+Enter ID: 102
+Enter Name: Aman
+Enter Designation: Clerk
+
+ID      Name
+101     Rahul
+102     Aman
+</div>
+
+<hr>
+
 </body>
 </html>
