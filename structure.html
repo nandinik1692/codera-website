@@ -313,6 +313,32 @@ ID      Name
 </div>
 
 <hr>
+<h1> union</h1>
+        #include <stdio.h>
+
+// Define a union named 'Data'
+union Data {
+    int i;
+    float f;
+};
+
+int main() {
+    // Create a variable of union Data
+    union Data myData;
+
+    // 1. Use the integer member
+    myData.i = 10;
+    printf("Integer: %d\n", myData.i);
+
+    // 2. Use the float member (this will overwrite the integer!)
+    myData.f = 5.5;
+    printf("Float: %.1f\n", myData.f);
+
+    return 0;
+}
+output
+Integer: 10
+Float: 5.5
 
 </body>
 </html>
