@@ -313,32 +313,68 @@ ID      Name
 </div>
 
 <hr>
-<h1> union</h1>
-        #include <stdio.h>
 
-// Define a union named 'Data'
-union Data {
-    int i;
-    float f;
+<h2>Question 1</h2>
+
+<p class="question">
+Create a structure of student containing roll number, name, city and marks. Enter details from user and display them.
+</p>
+
+<h3>union:</h3>
+
+<pre>
+#include < stdio.h >;
+
+struct student
+{
+    int rollno;
+    char name[30];
+    char city[15];
+    int marks;
 };
-<hr>
 
-int main() {
-    // Create a variable of union Data
-    union Data myData;
-            
-    myData.i = 10;
-    printf("Integer: %d\n", myData.i);
+int main()
+{
+    struct student st;
 
-    //  Use the float member (this will overwrite the integer!)
-    myData.f = 5.5;
-    printf("Float: %.1f\n", myData.f);
+    printf("Enter Roll Number: ");
+    scanf("%d", &st.rollno);
+
+    printf("Enter the Name: ");
+    scanf("%s", st.name);
+
+    printf("Enter the City: ");
+    scanf("%s", st.city);
+
+    printf("Enter the Marks: ");
+    scanf("%d", &st.marks);
+
+    printf("Roll Number is: %d\n", st.rollno);
+    printf("Name is: %s\n", st.name);
+    printf("City is: %s\n", st.city);
+    printf("Total Marks is: %d\n", st.marks);
 
     return 0;
 }
-output
-Integer: 10
-Float: 5.5
+</pre>
+
+<h3>Output:</h3>
+
+<div class="output">
+Enter Roll Number: 101
+Enter the Name: Nandini
+Enter the City: Chandigarh
+Enter the Marks: 95
+
+Roll Number is: 101
+Name is: Nandini
+City is: Chandigarh
+Total Marks is: 95
+</div>
+
+<hr>
+
+
 
 </body>
 </html>
