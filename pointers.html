@@ -2,7 +2,7 @@
 <head>
 
 <title>pointers</title>
-<body background="SUNDAR.jpeg.jpeg">
+<body background="C:\Users\pc\Desktop\New folder\pinkbird.jpg.jpeg">
 <marquee><h2><U><I> <B>DON'T GIVE UP AND KEEP SMILING ..................</H2></u></i></marquee>
 </head>
 <body>
@@ -33,6 +33,49 @@ output:
 Value is 50
 Address is 0x7ffe1234
 Value using pointer is 50
+
+
+
+Question 2: Write a program in which we are having a 2-d array of 2*3, insert the value thorugh pointer and print the value
+
+Solution:
+#include < stdio.h >
+
+int main() {
+    int arr[2][3];
+    
+    int *ptr = &arr[0][0];
+
+    printf("Enter 6 numbers:\n");
+    for (int i = 0; i < 6; i++) {
+        scanf("%d", (ptr + i));
+    }
+
+    ptr = &arr[0][0];
+
+    printf("\nThe 2D array elements are:\n");
+    for (int i = 0; i < 2; i++) 
+{     
+        for (int j = 0; j < 3; j++) 
+{ 
+            printf("%d ", *ptr);
+            ptr++;
+        }
+        printf("\n"); 
+    }
+}
+
+Output
+Enter 6 numbers:
+10
+20
+30
+40
+50
+60
+The 2D array elements are:
+10 20 30 
+40 50 60
 </pre>
 </body>
 </html>
